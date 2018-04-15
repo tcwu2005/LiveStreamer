@@ -7,11 +7,11 @@ LOCAL_CPPFLAGS := \
 
 LOCAL_MODULE := LiveStreamer
 
-LOCAL_ARM_MODE := arm
+##LOCAL_ARM_MODE := arm
 
-LOCAL_PRELINK_MODULE := false
+##LOCAL_PRELINK_MODULE := false
 
-LOCAL_MODULE_TAGS := optional
+##LOCAL_MODULE_TAGS := optional
 
 LOCAL_LDLIBS    := -lm -llog -latomic
 
