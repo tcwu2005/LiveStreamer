@@ -1,4 +1,4 @@
-# LiveStreamer
+# LiveStreamer (original from https://github.com/papan01/LiveStreamer)
 [![LiveStreamer](https://i.imgur.com/m1vpLlb.jpg)](https://youtu.be/RqV-pfdmuQc "LiveStreamer")
 ## Introduction
 
