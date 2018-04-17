@@ -3,6 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
+
+    //apk name
+    project.archivesBaseName = "LiveStreamer"
+
     defaultConfig {
         applicationId "edu.papan01.livestreamer"
         minSdkVersion 21
