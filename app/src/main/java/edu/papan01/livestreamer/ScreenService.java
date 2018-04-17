@@ -35,12 +35,15 @@ public class ScreenService extends Service implements EncoderThread.EncoderListe
     private static final int DFRAME_RATE = 15;
     private static final int RTSP_PORT = 8554;
     //old//private static final int BIT_RATE = 1024;
-    private static final int BIT_RATE = 1024*12;    //tcwu2005
+    private static final int BIT_RATE = 1024*20;    //tcwu2005
     //old//private static final int I_FRAME = 2;
     private static final int I_FRAME = 0;   //tcwu2005
-    private static final int VIDEO_WIDTH = 480;
-    private static final int VIDEO_HEIGHT = 640;
+    private static /*final*/ int VIDEO_WIDTH = 480;
+    private static /*final*/ int VIDEO_HEIGHT = 640;
     private int dpi;
+    private int widthPixels;
+    private int heightPixels;
+    private static final int scaledown_factor=4;
 
     public static final int STATE_STARTED = 0x00;
     public static final int STATE_STOPED = 0x01;
@@ -62,6 +65,10 @@ public class ScreenService extends Service implements EncoderThread.EncoderListe
         WindowManager wm = (WindowManager) this.getSystemService(WINDOW_SERVICE);
         wm.getDefaultDisplay().getRealMetrics(displayMetrics);
         dpi = displayMetrics.densityDpi;
+        widthPixels = displayMetrics.widthPixels;
+        heightPixels = displayMetrics.heightPixels;
+        VIDEO_WIDTH = widthPixels/scaledown_factor;
+        VIDEO_HEIGHT = heightPixels/scaledown_factor;
 
         if (null != intent) {
             if (intent.getAction() != null && intent.getAction().equals("stop")) {
