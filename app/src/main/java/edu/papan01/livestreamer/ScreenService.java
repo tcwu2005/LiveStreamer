@@ -34,8 +34,10 @@ public class ScreenService extends Service implements EncoderThread.EncoderListe
 
     private static final int DFRAME_RATE = 15;
     private static final int RTSP_PORT = 8554;
-    private static final int BIT_RATE = 1024;
-    private static final int I_FRAME = 2;
+    //old//private static final int BIT_RATE = 1024;
+    private static final int BIT_RATE = 1024*12;    //tcwu2005
+    //old//private static final int I_FRAME = 2;
+    private static final int I_FRAME = 0;   //tcwu2005
     private static final int VIDEO_WIDTH = 480;
     private static final int VIDEO_HEIGHT = 640;
     private int dpi;
